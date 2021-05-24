@@ -1,0 +1,60 @@
+flex-col{
+  display: flex;
+  flex-direction: column;
+}
+.flex-col div{
+  display: flex;
+  flex-direction: column;
+}
+.foot-nav{
+  padding: 60px 0;
+  background-color: black;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: grey;
+  position: relative;
+  overflow-y: hidden;
+}
+h4{
+  color: #FFF;
+}
+.logo-footer{
+  position: absolute;
+  top: -50px;
+  left: 55%;
+  width: 32%;
+  z-index: 0;
+
+}
+.dc-ent{
+  position: absolute;
+  bottom: 0px;
+}
+.last-row{
+  background-color: #1d1d1d;
+
+}
+.tvw{
+  position: absolute;
+  right: 0;
+  top: 15px;
+}
+.tvw img{
+  padding-left: 15px;
+}
+.tvw span{
+
+  color: #0282f9;
+}
+.p-rel{
+  position: relative;
+}
+.btn-last{
+  margin: 15px;
+  padding: 10px 30px;
+  border: 2px solid  #0282f9;
+  background-color: #000;
+  color: #FFF;
+  display: inline-block;
+}

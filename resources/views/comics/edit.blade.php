@@ -5,20 +5,20 @@
     <form action="{{route('comics.update',['comic' => $comic->id])}}" method="post">
       @csrf
         @method('PUT')
-        <label for="title">Title</label>
-        <input type="text" name="title"  value="{{$comic->title}}">
-        <label for="content">Description</label>
-        <input type="text" name="description"  value="{{$comic->description}}">
-        <label for="title">Thumb</label>
-        <input type="text" name="thumb"  value="{{$comic->thumb}}">
-        <label for="title">Series</label>
-        <input type="text" name="series"  value="{{$comic->series}}">
-        <label for="title">Price</label>
-        <input type="text" name="price"  value="{{$comic->price}}">
-        <label for="title">sale_date</label>
-        <input type="text" name="sale_date"  value="{{$comic->sale_date}}">
-        <label for="title">Type</label>
-        <input type="text" name="type"  value="{{$comic->type}}">
+        <label for="title">Title</label><br>
+        <input type="text" name="title"  value="{{$comic->title}}"> <br>
+        <label for="content">Description</label><br>
+        <input type="text" name="description"  value="{{$comic->description}}"><br>
+        <label for="title">Thumb</label><br>
+        <input type="text" name="thumb"  value="{{$comic->thumb}}"><br>
+        <label for="title">Series</label><br>
+        <input type="text" name="series"  value="{{$comic->series}}"><br>
+        <label for="title">Price</label><br>
+        <input type="text" name="price"  value="{{$comic->price}}"><br>
+        <label for="title">sale_date</label><br>
+        <input type="text" name="sale_date"  value="{{$comic->sale_date}}"><br>
+        <label for="title">Type</label><br>
+        <input type="text" name="type"  value="{{$comic->type}}"><br>
 
         <input type="submit" value="Invia">
 
