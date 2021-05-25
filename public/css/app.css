@@ -88,6 +88,19 @@ input {
   flex-direction: column;
 }
 
+.alert.alert-danger {
+  border: 1px solid red;
+  color: red;
+}
+
+.alert.alert-danger ul {
+  padding: 10px;
+}
+
+.alert.alert-danger li {
+  list-style: none;
+}
+
 .flex-middle {
   margin: 0 auto;
   display: flex;

@@ -36,19 +36,30 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
-      $comic = $request->all();
-      $newComic = new Comic();
-      $newComic->title = $comic['title'];
-      $newComic->description = $comic['description'];
-      $newComic->thumb = $comic['thumb'];
-      $newComic->price = $comic['price'];
-      $newComic->series = $comic['series'];
-      $newComic->sale_date = $comic['sale_date'];
-      $newComic->type = $comic['type'];
-      $newComic->save();
+      $request->validate([
+             'title' => 'required|unique:comics|max:255',
+             'description' => 'required',
+             'thumb' => 'required|URL',
+             'price' => 'required|numeric',
+             'series' => 'required|max:255',
+             'sale_date' => 'required',
+             'type' => 'required'
 
-       $comic = Comic::orderBy('id', 'desc')->first();
-      return redirect()->route('comics.show', compact('comic'));
+         ]);
+         $data = $request->all();
+
+         $newdate = new Comic();
+         $newdate->title = $data['title'];
+         $newdate->description = $data['description'];
+         $newdate->thumb = $data['thumb'];
+         $newdate->price = $data['price'];
+         $newdate->series = $data['series'];
+         $newdate->sale_date = $data['sale_date'];
+         $newdate->type = $data['type'];
+         $newdate->save();
+
+         $comic = Comic::orderBy('id', 'desc')->first();
+         return redirect()->route('comics.show', compact('comic'));
     }
 
     /**
@@ -82,10 +93,19 @@ class ComicController extends Controller
      */
     public function update(Request $request, Comic $comic)
     {
-      $data = $request->all();
-      $comic->update($data);
+      $request->validate([
+            'title' => 'required|max:255',
+            'description' => 'required',
+            'thumb' => 'required|URL',
+            'price' => 'required|numeric',
+            'series' => 'required|max:255',
+            'sale_date' => 'required',
+            'type' => 'required'
 
-      return redirect()->route('comics.show', $comic);
+        ]);
+        $data = $request->all();
+        $comic->update($data);
+        return redirect()->route('comics.show', compact('comic'));
     }
 
     /**
